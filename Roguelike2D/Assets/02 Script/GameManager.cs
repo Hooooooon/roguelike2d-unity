@@ -6,6 +6,9 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance = null;  // 다른 클래스에서도 GameManager 접근 가능 (singleton)
     public BoardManager boardScript;        // 레벨을 설정할 boardManager에 대한 참조를 저장
+    public int playerFoodPoints = 100;      // 
+    [HideInInspector]public bool playerTurn = true;
+    
     private int level = 3;                  // Day1, 게임에서 현재 레벨 번호
 
     // Awake는 Start 함수 전에 호출됨.
@@ -31,10 +34,9 @@ public class GameManager : MonoBehaviour
         // 현재 레벨 번호 전달(적이 얼마나 나올지 결정)
         boardScript.SetupScene(level);
     }
-    // Start is called before the first frame update
-    void Start()
-    {
-        
+
+    public void GameOver(){
+        enabled = false;
     }
 
     // Update is called once per frame
