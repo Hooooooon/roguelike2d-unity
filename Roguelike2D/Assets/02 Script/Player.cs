@@ -77,7 +77,6 @@ public class Player : MovingObject
             food += pointsPerSoda;
             other.gameObject.SetActive(false);
         }
-
     }
 
     // 플레이어가 이동하려는 공간에 벽이 있고, 이에 막히는 경우의 행동    
